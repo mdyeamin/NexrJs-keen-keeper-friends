@@ -24,10 +24,7 @@ const QuickButton = ({ name }) => {
       name,
       fullDate,
     };
-    const isExistFriend = friendInfo.find((a) => a.status == "call");
-    const isExistFriendWithName = friendInfo.find((a) => a.name == name);
-
-    if (!isExistFriend || !isExistFriendWithName) {
+   
       setFriendInfo([...friendInfo, info]);
       toast.success(`${name} added to the timeline`, {
         position: "bottom-right",
@@ -35,14 +32,8 @@ const QuickButton = ({ name }) => {
         hideProgressBar: false,
         icon: <FiPhone className="text-xl" />,
       });
-    } else {
-      toast.warning(`${name} already added in the timeline`, {
-        position: "bottom-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        icon: <FiPhone className="text-xl" />,
-      });
-    }
+   
+   
   };
   const handleText = () => {
     const today = new Date();
@@ -59,9 +50,8 @@ const QuickButton = ({ name }) => {
       name,
       fullDate,
     };
-    const isExistFriend = friendInfo.find((a) => a.status == "text");
-    const isExistFriendWithName = friendInfo.find((a) => a.name == name);
-    if (!isExistFriend || !isExistFriendWithName) {
+
+
       setFriendInfo([...friendInfo, info]);
       toast.success(`${name} added to the timeline`, {
         position: "bottom-right",
@@ -69,14 +59,7 @@ const QuickButton = ({ name }) => {
         hideProgressBar: false,
         icon: <FiMessageSquare className="text-xl" />,
       });
-    } else {
-      toast.warning(`${name} already added in the timeline`, {
-        position: "bottom-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        icon: <FiMessageSquare className="text-xl" />,
-      });
-    }
+  
   };
   const handleVideo = () => {
     const today = new Date();
@@ -93,9 +76,8 @@ const QuickButton = ({ name }) => {
       name,
       fullDate,
     };
-    const isExistFriend = friendInfo.find((a) => a.status == "video");
-    const isExistFriendWithName = friendInfo.find((a) => a.name == name);
-    if (!isExistFriend || !isExistFriendWithName) {
+    
+
       setFriendInfo([...friendInfo, info]);
       toast.success(`${name} added to the timeline`, {
         position: "bottom-right",
@@ -103,14 +85,7 @@ const QuickButton = ({ name }) => {
         hideProgressBar: false,
         icon: <FiVideo className="text-xl" />,
       });
-    } else {
-      toast.warning(`${name} already added in the timeline`, {
-        position: "bottom-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        icon: <FiVideo className="text-xl" />,
-      });
-    }
+    
   };
   console.log(friendInfo, "info");
 
