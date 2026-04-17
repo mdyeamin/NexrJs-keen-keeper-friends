@@ -82,21 +82,33 @@ const TimeLineCard = () => {
                   key={i}
                   className="group relative flex items-center p-5 bg-white border border-slate-100 rounded-2xl shadow-sm transition-all duration-500 hover:shadow-xl overflow-hidden cursor-pointer"
                 >
-                  {/* Left Accent Bar */}
-                  <div className="absolute left-0 top-0 h-full w-1.5 bg-emerald-600 z-20 transition-all duration-300 group-hover:w-2"></div>
+                  {/* Left Accent Bar - Dynamic Color */}
+                  <div
+                    className="absolute left-0 top-0 h-full w-1.5 z-20 transition-all duration-300 group-hover:w-2"
+                    style={{ backgroundColor: timeline.fill }}
+                  ></div>
 
-                  {/* Right Side Rounded Shape (Hover Effect) */}
-                  <div className="absolute -right-12 -top-12 w-32 h-32 bg-emerald-50 rounded-full transition-all duration-700 ease-in-out group-hover:scale-[10] group-hover:bg-emerald-600/5 group-hover:-translate-x-full z-0"></div>
+                  {/* Right Side Rounded Shape - Dynamic Glow */}
+                  <div
+                    className="absolute -right-12 -top-12 w-32 h-32 rounded-full transition-all duration-700 ease-in-out group-hover:scale-[10] group-hover:-translate-x-full z-0 opacity-10 group-hover:opacity-5"
+                    style={{ backgroundColor: timeline.fill }}
+                  ></div>
 
-                  {/* Icon Container */}
-                  <div className="relative z-10 flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center mr-4 bg-slate-50 text-2xl transition-all duration-500 group-hover:bg-white group-hover:shadow-md group-hover:scale-110">
+                  {/* Icon Container - Dynamic Light Background */}
+                  <div
+                    className="relative z-10 flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center mr-4 text-2xl transition-all duration-500 group-hover:bg-white group-hover:shadow-md group-hover:scale-110"
+                    style={{
+                      backgroundColor: `${timeline.fill}15`, // ১৬% ট্রান্সপারেন্সি যোগ করা হয়েছে
+                      color: timeline.fill,
+                    }}
+                  >
                     {timeline.icon}
                   </div>
 
                   {/* Content Area */}
                   <div className="relative z-10 flex flex-col flex-grow">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="font-bold text-slate-800 text-lg transition-colors duration-300 group-hover:text-emerald-900">
+                      <span className="font-bold text-slate-800 text-lg transition-colors duration-300 group-hover:text-black">
                         {timeline.status}
                       </span>
                       <span className="text-slate-500 text-sm font-medium">
@@ -105,13 +117,19 @@ const TimeLineCard = () => {
                     </div>
 
                     <div className="text-slate-400 text-xs font-semibold mt-1 flex items-center gap-1 uppercase tracking-wider">
-                      <span className="w-1 h-1 bg-slate-300 rounded-full"></span>
+                      <span
+                        className="w-1.5 h-1.5 rounded-full"
+                        style={{ backgroundColor: timeline.fill }}
+                      ></span>
                       {timeline.fullDate}
                     </div>
                   </div>
 
-                  {/* Hover Arrow (Optional extra touch) */}
-                  <div className="relative z-10 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-emerald-600">
+                  {/* Hover Arrow - Dynamic Color */}
+                  <div
+                    className="relative z-10 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
+                    style={{ color: timeline.fill }}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5"

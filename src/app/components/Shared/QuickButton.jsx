@@ -21,6 +21,7 @@ const QuickButton = ({ name }) => {
     const info = {
       status: "call",
       icon: <FiPhone className="text-xl" />,
+      fill: "#0088FE",
       name,
       fullDate,
     };
@@ -45,7 +46,7 @@ const QuickButton = ({ name }) => {
     const info = {
       status: "text",
       icon: <FiMessageSquare className="text-xl" />,
-      
+      fill: "#00C49F",
       name,
       fullDate,
     };
@@ -70,6 +71,7 @@ const QuickButton = ({ name }) => {
     const info = {
       status: "video",
       icon: <FiVideo className="text-xl" />,
+      fill: "#FF8042",
       name,
       fullDate,
     };
